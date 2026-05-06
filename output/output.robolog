@@ -1,0 +1,663 @@
+V 0.0.4
+T 2026-05-06T22:58:48.013+00:00
+ID 1|24239c0d-499f-11f1-a17b-8091337e978a
+I "sys.platform=win32"
+I "python=3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]"
+M a:"tasks.py - send_weekly_newsletter"
+SR a|0.005
+M c:"Collect tasks"
+M d:"setup"
+M e:""
+P b:c|d|e|e|0
+ST b|0.005
+M f:"regular"
+M g:"\nCollecting task send_weekly_newsletter from: tasks.py\n"
+C f|g|0.006
+M h:"PASS"
+ET h|e|0.279
+M j:"send_weekly_newsletter"
+M k:"tasks"
+M l:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\tasks.py"
+M m:null
+P i:j|k|l|m|38
+ST i|0.279
+M n:"======================= "
+C f|n|0.279
+M o:"Running: "
+C f|o|0.279
+M p:"task_name"
+C p|j|0.279
+M q:" ========================\n"
+C f|q|0.279
+M r:"METHOD"
+SE i|r|0.28
+M t:"get_secret"
+M u:"robocorp.vault"
+M v:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\vault\\__init__.py"
+P s:t|u|v|e|19
+SE s|r|0.28
+M w:"name"
+M x:"str"
+M y:"'funky_friday_newsletter'"
+EA w|x|y
+M z:"hide"
+M A:"bool"
+M B:"True"
+EA z|A|B
+EE r|h|0.342
+P C:j|k|l|e|39
+M D:"secrets"
+M E:"SecretContainer"
+M F:"Secret(name=funky_friday_newsletter, keys=[API_BASE_URL, AUTOMATION_API_KEY, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, EMAIL_FROM, TEST_RECIPIENT_EMAIL])"
+AS C|D|E|F|0.342
+P G:j|k|l|e|41
+M H:"api_base_url"
+M I:"'<redacted>'"
+AS G|H|x|I|0.342
+P J:j|k|l|e|42
+M K:"automation_api_key"
+AS J|K|x|I|0.342
+P L:j|k|l|e|44
+M M:"headers"
+M N:"dict"
+M O:"{'Authorization': 'Bearer <redacted>', 'x-automation-key': '<redacted>'}"
+AS L|M|N|O|0.342
+M Q:"post"
+M R:"requests.api"
+M S:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\requests\\api.py"
+P P:Q|R|S|e|103
+SE P|r|0.342
+M T:"url"
+M U:"'<redacted>/admin/magazine/generate'"
+EA T|x|U
+M V:"data"
+M W:"NoneType"
+M X:"None"
+EA V|W|X
+M Y:"json"
+EA Y|W|X
+M Z:"kwargs"
+M 0:"{'headers': {'Authorization': 'Bearer <redacted>', 'x-automation-key': '<redacted>'}, 'timeout': 30}"
+EA Z|N|0
+P 1:Q|R|S|e|115
+M 2:"Response"
+M 3:"<Response [201]>"
+R 1|2|3|0.54
+EE r|h|0.54
+P 4:j|k|l|e|49
+M 5:"magazine_response"
+AS 4|5|2|3|0.54
+M 7:"Response.ok"
+M 8:"requests.models"
+M 9:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\requests\\models.py"
+P 6:7|8|9|e|757
+SE 6|r|0.54
+P aa:7|8|9|e|769
+R aa|A|B|0.54
+EE r|h|0.54
+M ac:"Response.raise_for_status"
+P ab:ac|8|9|e|1001
+SE ab|r|0.54
+EE r|h|0.54
+M ae:"Response.json"
+P ad:ae|8|9|e|949
+SE ad|r|0.54
+M af:"{}"
+EA Z|N|af
+P ag:ae|8|9|e|978
+M ah:"{'ok': True, 'issue': {'id': '69fbbbe5f114ec3b89ab746f', 'weekKey': '2026-05-01', 'subject': 'Album of the week: The Dark Side of the Moon by Pink Floyd'}, 'album': {'id': '69fa59998bbfbdc0ed036233', 'title': 'The Dark Side of the Moon', 'artist': 'Pink Floyd', 'year': '1973', 'image': 'https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg', 'description': \"This week's Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.\", 'appUrl': 'https://funkyfriday2.vercel.app/'}, 'recipients': [{'userId': '69f2828f0017e323161641e4', 'email': 'bogan.3@hotmail.com', 'name': 'Noah Bogan'}, {'userId': '69faa27a878864bc58fe2cd0', 'email': 'craftagiraffe@gmail.com', 'name': 'Craftagiraffe'}, {'userId': '69f28d871f6001709e190ee9', 'email': 'kiermaszjeremi@gmail.com', 'name': 'Jeremi Kiermasz'}, {'userId': '69f280f90017e323161641e2', 'email': 'madmaksy10@gmail.com', 'name': 'Nightflash'}, {'userId': '69f280a30017e323161641e1', 'email': 'nicola.zarzycka10@gmail.com', 'name': 'Nicola Zarzycka'}, {'userId': '69eff270697d0251ddb37bc0', 'email': '<redacted>', 'name': 'Maksymilian'}]}"
+R ag|N|ah|0.54
+EE r|h|0.54
+P ai:j|k|l|e|61
+AS ai|V|N|ah|0.541
+P aj:j|k|l|e|63
+M ak:"test_recipient_email"
+AS aj|ak|x|I|0.541
+M am:"if test_recipient_email"
+P al:am|k|l|e|65
+M an:"IF_SCOPE"
+SE al|an|0.541
+EA ak|x|I
+P ao:j|k|l|e|66
+AS ao|ak|x|I|0.541
+EE an|h|0.541
+M aq:"FileSystemLoader.__init__"
+M ar:"jinja2.loaders"
+M as:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\jinja2\\loaders.py"
+P ap:aq|ar|as|e|179
+SE ap|r|0.541
+M at:"searchpath"
+M au:"'templates'"
+EA at|x|au
+M av:"encoding"
+M aw:"'utf-8'"
+EA av|x|aw
+M ax:"followlinks"
+M ay:"False"
+EA ax|A|ay
+EE r|h|0.541
+M aA:"Environment.__init__"
+M aB:"jinja2.environment"
+M aC:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\jinja2\\environment.py"
+P az:aA|aB|aC|e|294
+SE az|r|0.541
+M aD:"block_start_string"
+M aE:"'{%'"
+EA aD|x|aE
+M aF:"block_end_string"
+M aG:"'%}'"
+EA aF|x|aG
+M aH:"variable_start_string"
+M aI:"'{{'"
+EA aH|x|aI
+M aJ:"variable_end_string"
+M aK:"'}}'"
+EA aJ|x|aK
+M aL:"comment_start_string"
+M aM:"'{#'"
+EA aL|x|aM
+M aN:"comment_end_string"
+M aO:"'#}'"
+EA aN|x|aO
+M aP:"line_statement_prefix"
+EA aP|W|X
+M aQ:"line_comment_prefix"
+EA aQ|W|X
+M aR:"trim_blocks"
+EA aR|A|ay
+M aS:"lstrip_blocks"
+EA aS|A|ay
+M aT:"newline_sequence"
+M aU:"'\\n'"
+EA aT|x|aU
+M aV:"keep_trailing_newline"
+EA aV|A|ay
+M aW:"extensions"
+M aX:"tuple"
+M aY:"()"
+EA aW|aX|aY
+M aZ:"optimized"
+EA aZ|A|B
+M a0:"undefined"
+M a1:"type"
+M a2:"<class 'jinja2.runtime.Undefined'>"
+EA a0|a1|a2
+M a3:"finalize"
+EA a3|W|X
+M a4:"autoescape"
+EA a4|A|ay
+M a5:"loader"
+M a6:"FileSystemLoader"
+M a7:"<jinja2.loaders.FileSystemLoader object at 0x000002BC9CEE01A0>"
+EA a5|a6|a7
+M a8:"cache_size"
+M a9:"int"
+M ba:"400"
+EA a8|a9|ba
+M bb:"auto_reload"
+EA bb|A|B
+M bc:"bytecode_cache"
+EA bc|W|X
+M bd:"enable_async"
+EA bd|A|ay
+EE r|h|0.541
+P be:j|k|l|e|79
+M bf:"env"
+M bg:"Environment"
+M bh:"<jinja2.environment.Environment object at 0x000002BC9CEE06E0>"
+AS be|bf|bg|bh|0.541
+M bj:"Environment.get_template"
+P bi:bj|aB|aC|e|982
+SE bi|r|0.541
+M bk:"'newsletter.html'"
+EA w|x|bk
+M bl:"parent"
+EA bl|W|X
+M bm:"globals"
+EA bm|W|X
+P bn:bj|aB|aC|e|1016
+M bo:"Template"
+M bp:"<Template 'newsletter.html'>"
+R bn|bo|bp|0.545
+EE r|h|0.545
+P bq:j|k|l|e|80
+M br:"template"
+AS bq|br|bo|bp|0.545
+M bt:"Template.render"
+P bs:bt|aB|aC|e|1275
+SE bs|r|0.545
+M bu:"args"
+EA bu|aX|aY
+M bv:"{'album': {'id': '69fa59998bbfbdc0ed036233', 'title': 'The Dark Side of the Moon', 'artist': 'Pink Floyd', 'year': '1973', 'image': 'https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg', 'description': \"This week's Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.\", 'appUrl': 'https://funkyfriday2.vercel.app/'}}"
+EA Z|N|bv
+M bx:"Context.resolve_or_missing"
+M by:"jinja2.runtime"
+M bz:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\jinja2\\runtime.py"
+P bw:bx|by|bz|e|229
+SE bw|r|0.545
+M bA:"key"
+M bB:"'album'"
+EA bA|x|bB
+P bC:bx|by|bz|e|243
+M bD:"{'id': '69fa59998bbfbdc0ed036233', 'title': 'The Dark Side of the Moon', 'artist': 'Pink Floyd', 'year': '1973', 'image': 'https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg', 'description': \"This week's Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.\", 'appUrl': 'https://funkyfriday2.vercel.app/'}"
+R bC|N|bD|0.545
+EE r|h|0.545
+M bF:"Environment.getattr"
+P bE:bF|aB|aC|e|485
+SE bE|r|0.545
+M bG:"obj"
+EA bG|N|bD
+M bH:"attribute"
+M bI:"'image'"
+EA bH|x|bI
+P bJ:bF|aB|aC|e|494
+M bK:"'https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg'"
+R bJ|x|bK|0.546
+EE r|h|0.546
+SE bE|r|0.546
+EA bG|N|bD
+M bL:"'title'"
+EA bH|x|bL
+M bM:"'The Dark Side of the Moon'"
+R bJ|x|bM|0.546
+EE r|h|0.546
+SE bE|r|0.546
+EA bG|N|bD
+EA bH|x|bL
+R bJ|x|bM|0.546
+EE r|h|0.546
+SE bE|r|0.546
+EA bG|N|bD
+M bN:"'artist'"
+EA bH|x|bN
+M bO:"'Pink Floyd'"
+R bJ|x|bO|0.546
+EE r|h|0.546
+SE bE|r|0.546
+EA bG|N|bD
+M bP:"'description'"
+EA bH|x|bP
+M bQ:"\"This week's Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.\""
+R bJ|x|bQ|0.546
+EE r|h|0.546
+SE bE|r|0.546
+EA bG|N|bD
+M bR:"'appUrl'"
+EA bH|x|bR
+M bS:"'https://funkyfriday2.vercel.app/'"
+R bJ|x|bS|0.546
+EE r|h|0.546
+P bT:bt|aB|aC|e|1293
+M bU:"'<!doctype html>\\n<html>\\n  <body style=\"font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;\">\\n    <h1>Funky Friday</h1>\\n\\n    <p>Your new Album of the Week is here.</p>\\n\\n    <img\\n      src=\"https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg\"\\n      alt=\"The Dark Side of the Moon cover\"\\n      style=\"width: 280px; max-width: 100%; border-radius: 12px;\"\\n    />\\n\\n    <h2>The Dark Side of the Moon</h2>\\n    <h3>Pink Floyd</h3>\\n\\n    <p>This week\\'s Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.</p>\\n\\n    <p>\\n      Listen to the album, submit your review, then unlock the community ratings.\\n    </p>\\n\\n    <p>\\n      <a href=\"https://funkyfriday2.vercel.app/\" style=\"display: inline-block; padding: 12px 18px; background: #111; color: white; text-decoration: none; border-radius: 8px;\">\\n        Open Funky Friday\\n      </a>\\n    </p>\\n\\n    <p style=\"font-size: 12px; color: #666;\">\\n      You are receiving this because you use Funky Friday.\\n    </p>\\n  </body>\\n</html>'"
+R bT|x|bU|0.546
+EE r|h|0.546
+P bV:j|k|l|e|81
+M bW:"html"
+AS bV|bW|x|bU|0.546
+P bX:j|k|l|e|83
+M bY:"results"
+M bZ:"list"
+M b0:"[]"
+AS bX|bY|bZ|b0|0.546
+M b2:"for recipient in data['recipients']"
+P b1:b2|k|l|e|85
+M b3:"FOR"
+SE b1|b3|0.546
+M b5:"Step: for recipient in data['recipients']"
+P b4:b5|k|l|e|85
+M b6:"FOR_STEP"
+SE b4|b6|0.546
+M b7:"recipient"
+M b8:"{'userId': '69eff270697d0251ddb37bc0', 'email': '<redacted>', 'name': 'Maksymilian'}"
+EA b7|N|b8
+M ca:"send_email"
+P b9:ca|k|l|e|136
+SE b9|r|0.547
+M cb:"smtp_host"
+EA cb|x|I
+M cc:"smtp_port"
+M cd:"<redacted>"
+EA cc|a9|cd
+M ce:"smtp_user"
+EA ce|x|I
+M cf:"smtp_password"
+EA cf|x|cd
+M cg:"sender"
+EA cg|x|I
+EA b7|x|I
+M ch:"subject"
+M ci:"'Album of the week: The Dark Side of the Moon by Pink Floyd'"
+EA ch|x|ci
+EA bW|x|bU
+P cj:ca|k|l|e|146
+M ck:"message"
+M cl:"EmailMessage"
+M cm:"<email.message.EmailMessage object at 0x000002BC9CEE0590>"
+AS cj|ck|cl|cm|0.556
+M co:"create_default_context"
+M cp:"ssl"
+M cq:"C:\\Users\\NightFlash96\\miniconda3\\Lib\\ssl.py"
+P cn:co|cp|cq|e|682
+SE cn|r|0.558
+M cr:"purpose"
+M cs:"Purpose"
+M ct:"<Purpose.SERVER_AUTH: _ASN1Object(nid=129, shortname='serverAuth', longname='TLS Web Server Authentication', oid='1.3.6.1.5.5.7.3.1')>"
+EA cr|cs|ct
+P cu:co|cp|cq|e|728
+M cv:"SSLContext"
+M cw:"<ssl.SSLContext object at 0x000002BC9CEDEF30>"
+R cu|cv|cw|0.579
+EE r|h|0.579
+P cx:ca|k|l|e|154
+M cy:"context"
+AS cx|cy|cv|cw|0.579
+M cA:"SMTP.__init__"
+M cB:"smtplib"
+M cC:"C:\\Users\\NightFlash96\\miniconda3\\Lib\\smtplib.py"
+P cz:cA|cB|cC|e|238
+SE cz|r|0.579
+M cD:"host"
+EA cD|x|I
+M cE:"port"
+EA cE|a9|cd
+M cF:"local_hostname"
+EA cF|W|X
+M cG:"timeout"
+M cH:"30"
+EA cG|a9|cH
+M cI:"source_address"
+EA cI|W|X
+EE r|h|1.491
+M cK:"SMTP.starttls"
+P cJ:cK|cB|cC|e|766
+SE cJ|r|1.492
+P cL:cK|cB|cC|e|809
+M cM:"(220, b'Ready to start TLS')"
+R cL|aX|cM|1.559
+EE r|h|1.559
+M cO:"SMTP.login"
+P cN:cO|cB|cC|e|698
+SE cN|r|1.559
+M cP:"user"
+EA cP|x|I
+M cQ:"password"
+EA cQ|x|cd
+P cR:cO|cB|cC|e|759
+M cS:"(235, b'Authentication succeeded')"
+R cR|aX|cS|1.79
+EE r|h|1.79
+M cU:"SMTP.send_message"
+P cT:cU|cB|cC|e|915
+SE cT|r|1.79
+M cV:"msg"
+EA cV|cl|cm
+M cW:"from_addr"
+EA cW|W|X
+M cX:"to_addrs"
+EA cX|W|X
+M cY:"mail_options"
+EA cY|aX|aY
+M cZ:"rcpt_options"
+EA cZ|aX|aY
+P c0:cU|cB|cC|e|989
+R c0|N|af|1.944
+EE r|h|1.944
+EE r|h|1.976
+EE b6|h|1.977
+EE b3|h|1.977
+SE P|r|1.977
+M c1:"'<redacted>/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log'"
+EA T|x|c1
+EA V|W|X
+M c2:"{'results': [{'userId': '69eff270697d0251ddb37bc0', 'email': '<redacted>', 'status': 'sent'}]}"
+EA Y|N|c2
+EA Z|N|0
+M c3:"<Response [404]>"
+R 1|2|c3|2.001
+EE r|h|2.001
+P c4:j|k|l|e|116
+M c5:"log_response"
+AS c4|c5|2|c3|2.001
+SE 6|r|2.001
+P c6:7|8|9|e|768
+R c6|A|ay|2.002
+EE r|h|2.002
+M c8:"if not log_response.ok"
+P c7:c8|k|l|e|123
+SE c7|an|2.002
+M c9:"stdout"
+M da:"Magazine sent-log request failed"
+C c9|da|2.002
+M db:"\n"
+C c9|db|2.002
+M dc:"Status:"
+C c9|dc|2.002
+M dd:" "
+C c9|dd|2.002
+M de:"404"
+C c9|de|2.002
+C c9|db|2.002
+M dg:"Response.text"
+P df:dg|8|9|e|912
+SE df|r|2.002
+P dh:dg|8|9|e|947
+M di:"'{\"error\":\"Not found\"}'"
+R dh|x|di|2.002
+EE r|h|2.002
+M dj:"Response body:"
+C c9|dj|2.002
+C c9|dd|2.002
+M dk:"{\"error\":\"Not found\"}"
+C c9|dk|2.002
+C c9|db|2.002
+EE an|h|2.002
+SE ab|r|2.002
+M dl:"HTTPError: 404 Client Error: Not Found for url: http://localhost:3001/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log"
+STB dl|2.002
+M dm:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\tasks\\_task.py"
+M dn:"run"
+M do:"return self.method(**kwargs)"
+TBE dm|57|dn|do
+M dp:"self"
+M dq:"Task"
+M dr:"Task(send_weekly_newsletter, status: Status.NOT_RUN)"
+TBV dp|dq|dr
+TBV Z|N|af
+M ds:"sig"
+M dt:"Signature"
+M du:"<Signature ()>"
+TBV ds|dt|du
+M dv:"log_response.raise_for_status()"
+TBE l|128|j|dv
+TBV D|E|F
+TBV H|x|I
+TBV K|x|I
+TBV M|N|O
+TBV 5|2|3
+M dw:"{'ok': True, 'issue': {'id': '69fbbbe5f114ec3b89ab746f', 'weekKey': '2026-05-01', 'subject': 'Album of the week: The Dark Side of the Moon by Pink Floyd'}, 'album': {'id': '69fa59998bbfbdc0ed036233', 'title': 'The Dark Side of the Moon', 'artist': 'Pink Floyd', 'year': '1973', 'image': 'https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/1000x1000-000000-80-0-0.jpg', 'description': \"This week's Funky Friday pick is The Dark Side of the Moon by Pink Floyd from 1973.Listen to the album, submit your own review, then unlock the community ratings.\", 'appUrl': 'https://funkyfriday2.vercel.app/'}, 'recipients': [{'userId': '69eff270697d0251ddb37bc0', 'email': '<redacted>', 'name': 'Maksymilian'}]}"
+TBV V|N|dw
+TBV ak|x|I
+TBV b7|N|b8
+TBV bf|bg|bh
+TBV br|bo|bp
+TBV bW|x|bU
+M dx:"[{'userId': '69eff270697d0251ddb37bc0', 'email': '<redacted>', 'status': 'sent'}]"
+TBV bY|bZ|dx
+TBV c5|2|c3
+M dy:"raise_for_status"
+M dz:"raise HTTPError(http_error_msg, response=self)"
+TBE 9|1028|dy|dz
+TBV dp|2|c3
+M dA:"http_error_msg"
+M dB:"'404 Client Error: Not Found for url: <redacted>/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log'"
+TBV dA|x|dB
+M dC:"reason"
+M dD:"'Not Found'"
+TBV dC|x|dD
+ETB 2.004
+M dE:"ERROR"
+EE r|dE|2.004
+EE r|dE|2.004
+C p|j|2.004
+M dF:" status: "
+C f|dF|2.004
+M dG:"error"
+M dH:"FAIL\n"
+C dG|dH|2.004
+M dI:"\n404 Client Error: Not Found for url: <redacted>/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log\n"
+C dG|dI|2.005
+M dJ:"=============== "
+C f|dJ|2.005
+M dK:"Full Traceback (running "
+C f|dK|2.005
+C p|j|2.005
+M dL:")"
+C f|dL|2.005
+M dM:" ================\n"
+C f|dM|2.005
+M dN:"traceback"
+M dO:"Traceback (most recent call last):\n  File \"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\tasks\\_commands.py\", line 453, in run\n    result = task.run(**kwargs)\n  File \"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\tasks\\_task.py\", line 57, in run\n    return self.method(**kwargs)\n           ~~~~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\tasks.py\", line 128, in send_weekly_newsletter\n    log_response.raise_for_status()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\requests\\models.py\", line 1028, in raise_for_status\n    raise HTTPError(http_error_msg, response=self)\nrequests.exceptions.HTTPError: 404 Client Error: Not Found for url: <redacted>/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log\n\n"
+C dN|dO|2.007
+M dP:"================================================================================\n"
+C f|dP|2.007
+M dQ:"FAIL"
+M dR:"404 Client Error: Not Found for url: http://localhost:3001/admin/magazine/69fbbbe5f114ec3b89ab746f/sent-log"
+ET dQ|dR|2.007
+M dT:"Teardown tasks"
+M dU:"teardown"
+P dS:dT|dU|e|e|0
+ST dS|2.007
+M dV:"Process snapshot"
+SPS dV|2.007
+M dW:"System information:\nMemory: Total: 31.9 G, Available: 16.1 G, Used: 49.6 %\nCPUs: 16"
+P dX:e|e|e|e|0
+L I|dW|dX|0|2.038
+M dY:"Current Process: python.exe (pid: 31220, status: running)\nCommand Line: C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Scripts\\python.exe -m robocorp.tasks run tasks.py -t send_weekly_newsletter\nStarted: 23:58:47\nParent pid: 12208\nResident Set Size: 48.1 M\nVirtual Memory Size: 34.1 M"
+L I|dY|dX|0|2.057
+M dZ:"MainThread|Thread ID: 25092 (non daemon)"
+STD dZ|2.057
+M d0:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\log\\__init__.py"
+M d1:"process_snapshot"
+M d2:"robo_logger.process_snapshot()"
+TBE d0|268|d1|d2
+M d3:"logger_instances"
+M d4:"{<robocorp.log._robo_logger._RoboLogger object at 0x000002BC9A695400>: 1}"
+TBV d3|N|d4
+M d5:"robo_logger"
+M d6:"_RoboLogger"
+M d7:"<robocorp.log._robo_logger._RoboLogger object at 0x000002BC9A695400>"
+TBV d5|d6|d7
+M d8:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\log\\_robo_logger.py"
+M d9:"new_func"
+M ea:"return func(self, *args, **kwargs)"
+TBE d8|20|d9|ea
+TBV dp|d6|d7
+TBV bu|aX|aY
+TBV Z|N|af
+M eb:"func"
+M ec:"function"
+M ed:"<function _RoboLogger.process_snapshot at 0x000002BC9A6A3E20>"
+TBV eb|ec|ed
+M ee:"return self._robot_output_impl.process_snapshot(hide_vars)"
+TBE d8|416|d1|ee
+TBV dp|d6|d7
+M ef:"hide_vars"
+TBV ef|A|ay
+M eg:"C:\\Users\\NightFlash96\\Desktop\\funky-friday-newsletter-worker\\.venv\\Lib\\site-packages\\robocorp\\log\\_robo_output_impl.py"
+M eh:"self._dump_threads(hide_vars)"
+TBE eg|747|d1|eh
+M ei:"_RoboOutputImpl"
+M ej:"<robocorp.log._robo_output_impl._RoboOutputImpl object at 0x000002BC9A695BE0>"
+TBV dp|ei|ej
+TBV ef|A|ay
+M ek:"log"
+M el:"module"
+M em:"<module 'robocorp.log' from 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\__init__.py'>"
+TBV ek|el|em
+M en:"entry_id"
+M eo:"'ps_1'"
+TBV en|x|eo
+M ep:"entry_type"
+M eq:"'process_snapshot'"
+TBV ep|x|eq
+M er:"psutil"
+M es:"<module 'psutil' from 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\psutil\\\\__init__.py'>"
+TBV er|el|es
+M et:"AccessDenied"
+M eu:"<class 'psutil.AccessDenied'>"
+TBV et|a1|eu
+M ev:"NoSuchProcess"
+M ew:"<class 'psutil.NoSuchProcess'>"
+TBV ev|a1|ew
+M ex:"ZombieProcess"
+M ey:"<class 'psutil.ZombieProcess'>"
+TBV ex|a1|ey
+M ez:"curr_process"
+M eA:"Process"
+M eB:"psutil.Process(pid=31220, name='python.exe', status='running', started='23:58:47')"
+TBV ez|eA|eB
+M eC:"log_info"
+M eD:"<function _RoboOutputImpl.process_snapshot.<locals>.log_info at 0x000002BC9CEDEE80>"
+TBV eC|ec|eD
+M eE:"memory_info"
+M eF:"'Total: 31.9 G, Available: 16.1 G, Used: 49.6 %'"
+TBV eE|x|eF
+M eG:"child_i"
+M eH:"0"
+TBV eG|a9|eH
+M eI:"child"
+TBV eI|eA|eB
+M eJ:"'python.exe'"
+TBV w|x|eJ
+M eK:"status"
+M eL:"'running'"
+TBV eK|x|eL
+M eM:"create_time"
+M eN:"'23:58:47'"
+TBV eM|x|eN
+M eO:"ppid"
+M eP:"'12208'"
+TBV eO|x|eP
+M eQ:"cmdline"
+M eR:"'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Scripts\\\\python.exe -m robocorp.tasks run tasks.py -t send_weekly_newsletter'"
+TBV eQ|x|eR
+M eS:"rss"
+M eT:"'48.1 M'"
+TBV eS|x|eT
+M eU:"vms"
+M eV:"'34.1 M'"
+TBV eU|x|eV
+M eW:"proc_memory_info"
+M eX:"pmem"
+M eY:"pmem(rss=50397184, vms=35794944, num_page_faults=15410, peak_wset=51232768, wset=50397184, peak_paged_pool=209440, paged_pool=209264, peak_nonpaged_pool=22624, nonpaged_pool=22488, pagefile=35794944, peak_pagefile=36540416, private=35794944)"
+TBV eW|eX|eY
+M eZ:"'Current Process: python.exe (pid: 31220, status: running)\\nCommand Line: C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Scripts\\\\python.exe -m robocorp.tasks run tasks.py -t send_weekly_newsletter\\nStarted: 23:58:47\\nParent pid: 12208\\nResident Set Size: 48.1 M\\nVirtual Memory Size: 34.1 M'"
+TBV ck|x|eZ
+M e0:"_dump_threads"
+M e1:"stack.append((f, f.f_lineno))"
+TBE eg|768|e0|e1
+TBV dp|ei|ej
+TBV ef|A|ay
+M e2:"thread_id"
+M e3:"25092"
+TBV e2|a9|e3
+M e4:"frame"
+M e5:"<frame at 0x000002BC9CE7DFC0, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\_robo_output_impl.py', line 772, code _dump_threads>"
+TBV e4|e4|e5
+M e6:"thread"
+M e7:"_MainThread"
+M e8:"<_MainThread(MainThread, started 25092)>"
+TBV e6|e7|e8
+M e9:"title"
+M fa:"'MainThread|Thread ID: 25092 (non daemon)'"
+TBV e9|x|fa
+M fb:"f"
+M fc:"<frame at 0x000002BC9C381750, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_commands.py', line 494, code run>"
+TBV fb|e4|fc
+M fd:"stack"
+M fe:"[(<frame at 0x000002BC9CF10D60, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\__init__.py', line 268, code process_snapshot>, 268), (<frame at 0x000002BC9CD4F4C0, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\_robo_logger.py', line 20, code new_func>, 20), (<frame at 0x000002BC9CF4ACF0, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\_robo_logger.py', line 416, code process_snapshot>, 416), (<frame at 0x000002BC9CE4F680, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\_robo_output_impl.py', line 747, code process_snapshot>, 747), (<frame at 0x000002BC9CE7DFC0, file 'C:\\\\Users\\\\NightFlash96\\\\Desktop\\\\funky-friday-newsletter-worker\\\\.venv\\\\Lib\\\\site-packages\\\\robocorp\\\\log\\\\_robo_output_impl.py', line 772, code _dump_threads>, 768)]"
+TBV fd|bZ|fe
+ETD 2.066
+EPS 2.066
+ET h|e|2.066
+ER dE|2.066
