@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <body style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
+    <h1>Funky Friday</h1>
+
+    <p>Your new Album of the Week is here.</p>
+
+    <img
+      src="{{ album.image }}"
+      alt="{{ album.title }} cover"
+      style="width: 280px; max-width: 100%; border-radius: 12px;"
+    />
+
+    <h2>{{ album.title }}</h2>
+    <h3>{{ album.artist }}</h3>
+
+    <p>{{ album.description }}</p>
+
+    <p>
+      Listen to the album, submit your review, then unlock the community ratings.
+    </p>
+
+    <p>
+      <a href="{{ album.appUrl }}" style="display: inline-block; padding: 12px 18px; background: #111; color: white; text-decoration: none; border-radius: 8px;">
+        Open Funky Friday
+      </a>
+    </p>
+
+    <p style="font-size: 12px; color: #666;">
+      You are receiving this because you use Funky Friday.
+    </p>
+  </body>
+</html>
