@@ -1,0 +1,29 @@
+tasks:
+  Send weekly newsletter:
+    command:
+      - python
+      - -m
+      - robocorp.tasks
+      - run
+      - tasks.py
+      - -t
+      - send_weekly_newsletter
+
+  Test configuration:
+    command:
+      - python
+      - -m
+      - robocorp.tasks
+      - run
+      - tasks.py
+      - -t
+      - test_configuration
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+
+PATH:
+  - .
+
+PYTHONPATH:
+  - .
