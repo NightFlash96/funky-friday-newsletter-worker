@@ -1,3 +1,6 @@
 robocorp
 requests
 jinja2
+google-genai
+pydantic
+robocorp-truststore
